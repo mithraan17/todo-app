@@ -1,5 +1,9 @@
 /* App.css */
-
+html
+{
+  height: 100%;
+  overflow:hidden;
+}
 /* Background image and general styling */
 body {
   /* Set the background image */
@@ -13,6 +17,7 @@ body {
   padding: 0;
   position: relative; /* Position context for the pseudo-element */
   height: 100vh; /* Ensure body takes full viewport height */
+  overflow: hidden;
 }
 
 /* Create a darkened overlay to reduce brightness */
@@ -22,7 +27,7 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.4); /* 40% opacity black overlay */
   pointer-events: none; /* Prevent overlay from interfering with clicks */
   z-index: -1; /* Ensure overlay is behind the content */

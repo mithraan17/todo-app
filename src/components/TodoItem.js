@@ -6,7 +6,7 @@ function TodoItem({ todo, index, deleteTodo }) {
   return (
     <div className="todo-item">
       <span>{index + 1}. {todo}</span>
-      <button onClick={() => deleteTodo(index)}>Delete</button>
+      <button onClick={() => deleteTodo(index)}>Completed</button>
     </div>
   );
 }
