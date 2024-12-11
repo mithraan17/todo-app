@@ -6,20 +6,25 @@ import TodoForm from './components/TodoForm';
 function App() {
   const [todos, setTodos] = useState([]);
 
-  // Load todos from localStorage when the component mounts
   useEffect(() => {
+    // Try to get todos from localStorage on initial render
     const storedTodos = JSON.parse(localStorage.getItem('todos'));
     if (storedTodos) {
       setTodos(storedTodos);
-    }
+    } 
   }, []);
-
+  
   // Save todos to localStorage whenever the todos state changes
   useEffect(() => {
     if (todos.length > 0) {
+      // Save non-empty todo list to localStorage
       localStorage.setItem('todos', JSON.stringify(todos));
+    } else {
+      // If the todo list is empty, remove the 'todos' key from localStorage
+      localStorage.removeItem('todos');
     }
   }, [todos]);
+  
 
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
