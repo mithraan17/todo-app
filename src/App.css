@@ -1,36 +1,34 @@
 /* App.css */
-html
-{
-  height: 100%;
-  overflow:hidden;
+html {
+  height: 100%; 
+  overflow-y: auto; 
 }
+
 /* Background image and general styling */
 body {
-  /* Set the background image */
   background-image: url('./assets/notes.jpg');
-  background-size: cover; /* Ensure the image covers the screen */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  position: relative; /* Position context for the pseudo-element */
-  height: 100vh; /* Ensure body takes full viewport height */
-  overflow: hidden;
+  position: relative;
+  min-height: 100%; /* Ensure the body takes at least the full viewport height */
+  overflow-y: auto; /* Enable vertical scrolling when content overflows */
 }
 
 /* Create a darkened overlay to reduce brightness */
 body::before {
-  content: ''; /* Required for pseudo-element */
-  position: absolute; /* Position overlay over the background */
+  content: ''; 
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4); /* 40% opacity black overlay */
-  pointer-events: none; /* Prevent overlay from interfering with clicks */
-  z-index: -1; /* Ensure overlay is behind the content */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  pointer-events: none;
+  z-index: -1;
 }
 
 .App {
@@ -40,8 +38,9 @@ body::before {
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  background-color: rgba(255, 255, 255, 0.9); 
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  overflow: auto; /* Allow App to grow if content exceeds */
 }
 
 h1 {
@@ -54,11 +53,10 @@ h1 {
 }
 
 h1 i {
-  margin-left: 15px; /* Space between the text and the icon */
-  font-size: 40px;   /* Size of the icon */
-  color: #ebb523;    /* Icon color */
+  margin-left: 15px;
+  font-size: 40px;
+  color: #ebb523;
 }
-
 
 /* Todo Form Styling */
 .todo-form {
@@ -98,7 +96,9 @@ h1 i {
 .todo-list {
   list-style-type: none;
   padding: 0;
-  margin:10px 10px 0 0;
+  margin: 10px 10px 0 0;
+  overflow-y: auto; /* Allow scrolling if there are too many todo items */
+  max-height: 60vh; /* Optionally, limit the height of the todo list */
 }
 
 .todo-item {
