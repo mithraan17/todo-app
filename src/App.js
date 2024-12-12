@@ -27,8 +27,15 @@ function App() {
   
 
   const addTodo = (todo) => {
+    // Check if the todo already exists in the list
+    if (todos.includes(todo)) {
+      alert("This todo is already added. Please enter another one.");
+      return; 
+    }
+    // If it's not a duplicate, add it to the list
     setTodos([...todos, todo]);
   };
+  
 
   const deleteTodo = (index) => {
     const newTodos = todos.filter((_, i) => i !== index);
