@@ -3,10 +3,16 @@
 import React from 'react';
 
 function TodoItem({ todo, index, deleteTodo }) {
+
+  const handleCompleteClick = () => {
+    deleteTodo(index);
+  };
+
+
   return (
     <div className="todo-item">
       <span>{index + 1}. {todo}</span>
-      <button onClick={() => deleteTodo(index)}>Completed</button>
+      <button onClick={handleCompleteClick}>Completed</button>
     </div>
   );
 }
