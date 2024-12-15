@@ -1,5 +1,4 @@
 // src/components/TodoList.js
-
 import React, { useState, useEffect } from 'react';
 import TodoItem from './TodoItem';
 
@@ -9,16 +8,18 @@ function TodoList({ todos, deleteTodo }) {
   useEffect(() => {
     if (todos.length > 0) {
       setShowNotification(true);
+      // Hide notification after 3 seconds
       const timeoutId = setTimeout(() => {
         setShowNotification(false);
       }, 3000);
 
       return () => clearTimeout(timeoutId); 
     }
-  }, [todos]); 
+  }, [todos]); // Trigger whenever todos change (i.e., when a new todo is added)
 
   return (
     <div className="todo-list">
+      {/* Display notification when a new todo is added */}
       {showNotification && (
         <div className="notification fade-in">
           Task Added!
@@ -34,6 +35,7 @@ function TodoList({ todos, deleteTodo }) {
             index={index}
             todo={todo}
             deleteTodo={deleteTodo}
+            
           />
         ))
       )}

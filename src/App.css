@@ -1,10 +1,9 @@
-
 html {
   height: 100%; 
   overflow-y: auto; 
 }
 
-/* Background image and general styling */
+
 body {
   background-image: url('./assets/notes.jpg');
   background-size: cover;
@@ -57,7 +56,6 @@ h1 i {
   color: #ebb523;
 }
 
-/* Todo Form Styling */
 .todo-form {
   display: flex;
   justify-content: center;
@@ -117,11 +115,9 @@ h1 i {
   pointer-events: none; 
 }
 
-
 .fade-in {
   animation: fadeIn 1s forwards;
 }
-
 
 @keyframes fadeIn {
   0% {
