@@ -101,6 +101,40 @@ h1 i {
   max-height: 60vh; /* Optionally, limit the height of the todo list */
 }
 
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Start invisible */
+  visibility: hidden; /* Hidden by default */
+  pointer-events: none; /* Don't interfere with clicks */
+}
+
+/* Fade-in animation for notification */
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+/* The fade-in keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .todo-item {
   display: flex;
   justify-content: space-between;
