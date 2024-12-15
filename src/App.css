@@ -1,4 +1,4 @@
-/* App.css */
+
 html {
   height: 100%; 
   overflow-y: auto; 
@@ -14,11 +14,10 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  min-height: 100%; /* Ensure the body takes at least the full viewport height */
-  overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  min-height: 100%; 
+  overflow-y: auto; 
 }
 
-/* Create a darkened overlay to reduce brightness */
 body::before {
   content: ''; 
   position: absolute;
@@ -40,7 +39,7 @@ body::before {
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.9); 
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  overflow: auto; /* Allow App to grow if content exceeds */
+  overflow: auto; 
 }
 
 h1 {
@@ -92,13 +91,13 @@ h1 i {
   background-color: #218838;
 }
 
-/* Todo Item Styling */
+
 .todo-list {
   list-style-type: none;
   padding: 0;
   margin: 10px 10px 0 0;
-  overflow-y: auto; /* Allow scrolling if there are too many todo items */
-  max-height: 60vh; /* Optionally, limit the height of the todo list */
+  overflow-y: auto; 
+  max-height: 60vh; 
 }
 
 .notification {
@@ -113,17 +112,17 @@ h1 i {
   font-size: 18px;
   z-index: 1000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  opacity: 0; /* Start invisible */
-  visibility: hidden; /* Hidden by default */
-  pointer-events: none; /* Don't interfere with clicks */
+  opacity: 0; 
+  visibility: hidden; 
+  pointer-events: none; 
 }
 
-/* Fade-in animation for notification */
+
 .fade-in {
   animation: fadeIn 1s forwards;
 }
 
-/* The fade-in keyframes */
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

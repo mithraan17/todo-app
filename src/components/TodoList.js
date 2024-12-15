@@ -9,18 +9,16 @@ function TodoList({ todos, deleteTodo }) {
   useEffect(() => {
     if (todos.length > 0) {
       setShowNotification(true);
-      // Hide notification after 3 seconds
       const timeoutId = setTimeout(() => {
         setShowNotification(false);
       }, 3000);
 
-      return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
+      return () => clearTimeout(timeoutId); 
     }
-  }, [todos]); // Trigger whenever todos change (i.e., when a new todo is added)
+  }, [todos]); 
 
   return (
     <div className="todo-list">
-      {/* Display notification when a new todo is added */}
       {showNotification && (
         <div className="notification fade-in">
           Task Added!
