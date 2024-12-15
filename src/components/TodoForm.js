@@ -5,18 +5,25 @@ import React, { useState } from 'react';
 function TodoForm({ addTodo }) {
   const [input, setInput] = useState('');
   const [error,setError] = useState('');
+  const minLength = 10;
+  const maxLength = 50; 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.trim() !== '') {
+    
+    
+    if (input.trim() === '') {
+      setError('Please enter a todo item');
+    } else if (input.length > maxLength) {
+      setError(`Todo item cannot exceed ${maxLength} characters`);
+    }else if (input.length < minLength) {
+      setError(`Todo item cannot be less than ${minLength} characters`);
+    } else {
       addTodo(input);
       setInput('');
       setError('');
     }
-    else{
-      setError("Please enter a todo item");
-
-    }
+    
   };
 
   return (
